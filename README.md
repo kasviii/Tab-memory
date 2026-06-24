@@ -17,17 +17,6 @@ then search and clean up those notes later from the toolbar popup.
 Notes are stored locally on your machine (`chrome.storage.local`) — nothing
 is sent anywhere.
 
-## Install it (no Chrome Web Store needed)
-
-1. Unzip this folder somewhere on your computer.
-2. Open Chrome and go to `chrome://extensions`.
-3. Turn on **Developer mode** (top-right toggle).
-4. Click **Load unpacked** and select the `tab-memory` folder.
-5. Pin the extension (puzzle-piece icon → pin) so the badge is visible.
-
-That's it — open a new tab or switch between a few and you'll see the
-prompt appear.
-
 ## Notes on behavior
 
 - The prompt only appears on regular web pages (`http://` / `https://`) —
