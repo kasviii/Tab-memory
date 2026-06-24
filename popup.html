@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tab Memory</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="tm-header">
+    <div class="tm-brand">
+      <span class="tm-brand-mark"></span>
+      <span class="tm-brand-name">Tab Memory</span>
+    </div>
+    <span class="tm-count" id="count">0 saved</span>
+  </header>
+
+  <div class="tm-search-wrap">
+    <svg class="tm-search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none">
+      <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+      <line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <input type="text" id="search" class="tm-search-input" placeholder="Search notes or URLs…" autocomplete="off" />
+  </div>
+
+  <main id="list" class="tm-list"></main>
+
+  <template id="item-template">
+    <div class="tm-item">
+      <div class="tm-item-top">
+        <img class="tm-favicon" alt="" />
+        <span class="tm-domain"></span>
+        <span class="tm-time"></span>
+        <button class="tm-delete" type="button" aria-label="Delete note">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
+            <path d="M5 6h14M9 6V4h6v2M7 6l1 14h8l1-14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="tm-note-text"></div>
+      <a class="tm-url" target="_blank" rel="noopener"></a>
+    </div>
+  </template>
+
+  <div id="empty" class="tm-empty" hidden>
+    <div class="tm-empty-mark">·</div>
+    <p class="tm-empty-title">No notes yet</p>
+    <p class="tm-empty-sub">Open a tab and Tab Memory will ask why — your notes show up here.</p>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+/* popup.css — Tab Memory popup */
+
+:root {
+  --bg: #121317;
+  --surface: #1b1d23;
+  --surface-2: #232631;
+  --border: #2b2e37;
+  --text: #e7e5e0;
+  --text-muted: #8b8d98;
+  --text-faint: #5b5d68;
+  --accent: #d9a857;
+  --accent-ink: #16140d;
+  --danger: #c1666b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 360px;
+  max-height: 560px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.tm-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px 10px;
+}
+
+.tm-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tm-brand-mark {
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.tm-brand-name {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.tm-count {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.tm-search-wrap {
+  position: relative;
+  margin: 0 16px 10px;
+}
+
+.tm-search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-faint);
+  pointer-events: none;
+}
+
+.tm-search-input {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 12.5px;
+  font-family: inherit;
+  padding: 8px 10px 8px 30px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.tm-search-input:focus {
+  border-color: var(--accent);
+}
+
+.tm-search-input::placeholder {
+  color: var(--text-faint);
+}
+
+.tm-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 10px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tm-list::-webkit-scrollbar {
+  width: 8px;
+}
+.tm-list::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+.tm-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tm-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  padding: 9px 10px 10px;
+  transition: background 0.12s ease;
+}
+
+.tm-item:hover {
+  background: var(--surface-2);
+}
+
+.tm-item-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 5px;
+}
+
+.tm-favicon {
+  width: 13px;
+  height: 13px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  background: var(--border);
+}
+
+.tm-domain {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.tm-time {
+  font-size: 10.5px;
+  color: var(--text-faint);
+  flex-shrink: 0;
+}
+
+.tm-delete {
+  background: none;
+  border: none;
+  color: var(--text-faint);
+  cursor: pointer;
+  padding: 3px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  transition: color 0.12s ease, background 0.12s ease;
+}
+
+.tm-delete:hover {
+  color: var(--danger);
+  background: rgba(193, 102, 107, 0.12);
+}
+
+.tm-note-text {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--text);
+  margin-bottom: 4px;
+  word-break: break-word;
+}
+
+.tm-url {
+  font-size: 10.5px;
+  color: var(--text-faint);
+  text-decoration: none;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tm-url:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.tm-empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px 30px 50px;
+  color: var(--text-muted);
+}
+
+.tm-empty-mark {
+  font-size: 32px;
+  color: var(--accent);
+  margin-bottom: 2px;
+}
+
+.tm-empty-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 4px 0 4px;
+}
+
+.tm-empty-sub {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.4;
+}
